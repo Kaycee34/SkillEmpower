@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './Pages/Home';
-import Courses from './pages/Courses';
-import Services from './pages/Services';
-import Programs from './pages/Programs';
-import Register from './pages/Register';
+import Courses from './Pages/Courses';
+import Services from './Pages/Services';
+import Programs from './Pages/Programs';
+import Register from './Pages/Register';
 
 const App = () => {
   return (
