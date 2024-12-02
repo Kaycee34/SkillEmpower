@@ -48,7 +48,7 @@ const Hero = () => {
       {/* Programs Section */}
     <div className="w-full px-6 mt-12 md:mt-20">
         <h2 className="text-center text-xl md:text-2xl font-semibold text-gray-700 mb-6">
-            School of Entrepreneurial Studies & Skills Acquisition
+            Our Programs
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2">
         {programs.slice(0, 3).map((program, index) => (
