@@ -85,7 +85,6 @@ const Hero = () => {
       </div>
 
 {/* Programs Section */}
-{/* Programs Section */}
 <div className="relative w-full px-6 mt-12 md:mt-20 z-10" data-aos="fade-up">
   <h2
     className="text-center text-xl md:text-2xl font-semibold text-white mb-6"
