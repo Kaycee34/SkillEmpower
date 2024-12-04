@@ -58,7 +58,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
       {/* Content */}
-      <div className="relative text-center px-6 z-10" data-aos="fade-down">
+      <div className="relative text-center px-6 z-10 mt-14" data-aos="fade-down">
         <h1
           className="text-4xl md:text-6xl font-extrabold text-white leading-snug"
           data-aos="fade-in"
@@ -84,46 +84,47 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Programs Section */}
-      <div className="relative w-full px-6 mt-12 md:mt-20 z-10" data-aos="fade-up">
-        <h2
-          className="text-center text-xl md:text-2xl font-semibold text-white mb-6"
-          data-aos="zoom-in"
-        >
-          Our Trainings
-        </h2>
-        <div
-          className={`flex flex-wrap justify-center gap-4 px-2 ${
-            isSmallScreen ? "grid grid-cols-2" : ""
-          }`}
-        >
-          {displayedPrograms.map((program, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-2 p-4 bg-transparent rounded-lg shadow-md border border-purple-500 hover:shadow-lg hover:scale-105 transform transition-all duration-300"
-              data-aos="flip-left"
-              data-aos-delay={index * 100} // Adds a delay for each program
-            >
-              <div className="h-4 w-4 bg-gradient-to-tr from-purple-500 to-blue-500 rounded-full"></div>
-              <h3 className="md:text-base font-bold text-3xl text-gray-100">
-                {program}
-              </h3>
-            </div>
-          ))}
-        </div>
-
-        {/* View More Link for Small Screens */}
-        {isSmallScreen && (
-          <div className="mt-6 text-center" data-aos="fade-left">
-            <button
-              onClick={handleTogglePrograms}
-              className="text-blue-500 hover:text-purple-600 text-sm font-medium"
-            >
-              {showAllPrograms ? "Collapse Programs" : "View More Programs"}
-            </button>
-          </div>
-        )}
+{/* Programs Section */}
+{/* Programs Section */}
+<div className="relative w-full px-6 mt-12 md:mt-20 z-10" data-aos="fade-up">
+  <h2
+    className="text-center text-xl md:text-2xl font-semibold text-white mb-6"
+    data-aos="zoom-in"
+  >
+    Our Trainings
+  </h2>
+  <div
+    className="flex flex-col gap-4 items-center px-2 sm:grid sm:grid-cols-2 sm:gap-4"
+  >
+    {displayedPrograms.map((program, index) => (
+      <div
+        key={index}
+        className="w-full max-w-md sm:max-w-none flex items-center gap-2 p-4 bg-transparent rounded-lg shadow-md border border-purple-500 hover:shadow-lg hover:scale-105 transform transition-all duration-300"
+        data-aos="flip-left"
+        data-aos-delay={index * 100} // Adds a delay for each program
+      >
+        <div className="h-4 w-4 bg-gradient-to-tr from-purple-500 to-blue-500 rounded-full"></div>
+        <h3 className="text-base md:text-lg font-bold text-gray-100">
+          {program}
+        </h3>
       </div>
+    ))}
+  </div>
+
+  {/* View More Link for Small Screens */}
+  {isSmallScreen && (
+    <div className="mt-6 text-center" data-aos="fade-left">
+      <button
+        onClick={handleTogglePrograms}
+        className="text-blue-500 hover:text-purple-600 text-sm font-medium"
+      >
+        {showAllPrograms ? "Collapse Programs" : "View More Programs"}
+      </button>
+    </div>
+  )}
+</div>
+
+
     </section>
   );
 };

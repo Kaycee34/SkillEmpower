@@ -1,39 +1,41 @@
-import { Link } from 'react-router-dom';
-import { Home } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Home } from "lucide-react";
 // import logo from '../assets/SkillEmpowerLogo.png';
 
 const NavbarDesktop = () => {
   return (
     <div className="flex justify-between items-center px-6 py-3 bg-white shadow-md font-semibold">
       {/* Logo Section */}
-      {/* <div className="flex items-center">
-        <a href="/">
-          <img
+      <div className="flex items-center">
+        <a href="/" className="text-lg font-bold text-gray-800">
+          {/* logo */}
+          {/* <img
             src={logo}
             alt="SkillEmpower"
-            className="mr-2 h-12 object-contain" // Adjust height here
-          />
+            className="mr-2 h-12 object-contain"
+          /> */}
+          SkillEmpower
         </a>
-      </div> */}
+      </div>
 
       {/* Navigation Links */}
-      <nav className="flex-1">
-        <ul className="flex justify-center items-center gap-8">
-          {["Home", "Courses", "Services", "Programs"].map((item, index) => (
-            <li key={index}>
-              {console.log(index)}
-              <Link
-                to={`/${item.toLowerCase()}`}
-                className="flex items-center gap-2 text-black hover:text-purple-600 transition"
-              >
-                {item === "Home" && (
-                  <Home size={18} className="text-purple-600" />
-                )}
-                <span>{item}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <nav className="flex items-center space-x-6">
+        <Link to="/" className="flex items-center gap-1 hover:text-gray-600 text-base">
+          <Home size={20} className="text-purple-500" />
+          Home
+        </Link>
+        <Link to="/courses" className="hover:text-gray-600 text-base">
+          Courses
+        </Link>
+        <Link to="/services" className="hover:text-gray-600 text-base">
+          Services
+        </Link>
+        <Link to="/programs" className="hover:text-gray-600 text-base">
+          Programs
+        </Link>
+        <Link to="/contact" className="hover:text-gray-600 text-base">
+          Contact Us
+        </Link>
       </nav>
 
       {/* Register Link */}

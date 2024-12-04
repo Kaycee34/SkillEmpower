@@ -1,5 +1,7 @@
-import AboutSection from "../components/About"
 import Hero from "../components/HeroPage"
+import AboutSection from './../components/About';
+
+
 
 const Home = () => {
   return (
