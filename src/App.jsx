@@ -5,11 +5,13 @@ import Services from './Pages/Services';
 import Programs from './Pages/Programs';
 import Register from './Pages/Register';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 
 const App = () => {
   return (
     <>
+      <Header />
       <Routes>
        <Route path="/" element={<Homepage />} />
         <Route path="/courses" element={<Courses />} />
