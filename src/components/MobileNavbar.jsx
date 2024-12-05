@@ -24,7 +24,7 @@ const MobileNavbar = () => {
 
         {/* User Icon */}
         <div>
-          <Link to="/Register">
+          <Link to="/register">
             <CircleUserRound size={24} className="text-purple-600 cursor-pointer" />
           </Link>
         </div>
@@ -44,13 +44,31 @@ const MobileNavbar = () => {
             ✕
           </button>
           <ul className="flex flex-col items-center justify-center flex-grow text-lg text-black">
-            {['Home', 'Courses', 'Services', 'Programs', 'Register'].map((item, index) => (
-              <li className="py-4" key={index}>
-                <Link to={`/${item.toLowerCase()}`} onClick={toggleSidebar}>
-                  {item}
-                </Link>
-              </li>
-            ))}
+            <li className="py-4">
+              <Link to="/" onClick={toggleSidebar}>
+                Home
+              </Link>
+            </li>
+            <li className="py-4">
+              <Link to="/courses" onClick={toggleSidebar}>
+                Courses
+              </Link>
+            </li>
+            <li className="py-4">
+              <Link to="/services" onClick={toggleSidebar}>
+                Services
+              </Link>
+            </li>
+            <li className="py-4">
+              <Link to="/programs" onClick={toggleSidebar}>
+                Programs
+              </Link>
+            </li>
+            <li className="py-4">
+              <Link to="/register" onClick={toggleSidebar}>
+                Register
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
