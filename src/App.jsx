@@ -5,6 +5,7 @@ import Services from './Pages/Services';
 import Programs from './Pages/Programs';
 import Register from './Pages/Register';
 import Header from './components/Header';
+import Footer from './components/footer';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/programs" element={<Programs />} />
         <Route path="/register" element={<Register />} />n 
       </Routes>
+      <Footer />
     </>
   );
 };
