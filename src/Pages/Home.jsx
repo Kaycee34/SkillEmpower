@@ -11,7 +11,7 @@ const Home = () => {
       <Hero />
       <AboutSection />
       <Benefits />
-      <StudentOverview />
+      {/* <StudentOverview /> */}
     </div>
   )
 }
