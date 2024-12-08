@@ -50,7 +50,15 @@ const Hero = () => {
           Achieve your dreams with expert-led training in technical, creative, 
           and entrepreneurial skills. Start your journey towards a brighter future today.
         </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+        {/* Sponsor Mention */}
+        <p
+          className="mt-6 text-gray-200 text-sm italic"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          Sponsored by <span className="font-semibold">Dike Akoghi'La Mba</span>
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
           <button className="px-8 py-3 bg-purple-500 text-white rounded-lg font-medium shadow-md hover:bg-purple-600 transition-transform transform hover:scale-105">
             Get Started
           </button>
@@ -64,4 +72,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import svg from "../assets/Animation.webm"
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
@@ -28,10 +29,18 @@ const AboutSection = () => {
         >
           At SkillEmpower, we are committed to equipping individuals with the essential skills for thriving in a fast-evolving world. Our mission is to empower you with practical, real-world knowledge that unlocks your potential and drives success across personal and professional pursuits. Whether you’re focused on entrepreneurship, technology, or creative growth, we provide the resources and guidance to help you succeed.
         </p>
+        {/* Sponsor Mention */}
+        <p
+          className="text-gray-600 mt-6 italic"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Proudly sponsored by <span className="font-semibold">Dike Akoghi'La Mba</span>
+        </p>
         <div
           className="mt-10"
           data-aos="fade-up" // Animation for the button
-          data-aos-delay="200" // Delay for button animation
+          data-aos-delay="300" // Delay for button animation
           style={{ transform: "none" }} // Ensure no transform is set initially
         >
           <button className="px-10 py-4 bg-purple-600 text-white rounded-full font-medium shadow-lg hover:bg-purple-700 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500">
