@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { Star } from "lucide-react";
-import jane from '../assets/janeDoe.jpg'
-import john from '../assets/johnSmith.jpg'
-import alice from '../assets/Alicejohnson.jpg'
+// import jane from '../assets/janeDoe.jpg'
+// import john from '../assets/johnSmith.jpg'
+// import alice from '../assets/Alicejohnson.jpg'
 
 const Testimonials = () => {
   useEffect(() => {
@@ -22,7 +22,7 @@ const Testimonials = () => {
         "SkillEmpower provided me with the tools and confidence to secure my dream job. Their expert mentorship is unparalleled.",
       rating: 5,
       role: "Junior Web Developer",
-      imgs: jane
+      // imgs: jane
     },
     {
       name: "John Smith",
@@ -30,7 +30,7 @@ const Testimonials = () => {
         "The hands-on learning approach was exactly what I needed. I feel empowered and ready to tackle real-world projects.",
       rating: 4,
       role: 'painter',
-      imgs: john
+      // imgs: john
     },
     {
       name: "Alice Johnson",
@@ -38,7 +38,7 @@ const Testimonials = () => {
         "A welcoming community and exceptional resources—SkillEmpower truly cares about its students' success.",
       rating: 5,
       role: 'vulcnizer',
-      imgs: alice
+      // imgs: alice
     },
   ];
 
@@ -62,9 +62,7 @@ const Testimonials = () => {
               data-aos-delay={`${index * 150}`} // Staggered delays
             >
               {/* Quote Icon */}
-              <div className="flex justify-center mb-4">
-                <img src={testimonial.imgs} className="w-24 h-24 rounded-full object-cover" alt="Jane Doe" />
-              </div>
+           
 
               {/* Feedback */}
               <p
