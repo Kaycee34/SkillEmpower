@@ -43,7 +43,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-12 bg-purple-50">
+    <section className="py-12 bg-white">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <h2

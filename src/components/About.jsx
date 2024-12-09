@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import svg from "../assets/Animation.webm"
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
@@ -14,7 +13,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 py-20 px-8 text-center">
+    <section className="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-20 px-8 text-center">
       <div className="max-w-4xl mx-auto">
         <h2
           className="text-4xl font-bold text-gray-800 mb-6"
