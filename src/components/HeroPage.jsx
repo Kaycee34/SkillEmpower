@@ -30,7 +30,7 @@ const Hero = () => {
         data-aos="fade-up" // Smooth fade-up effect
       >
         <h1
-          className="text-5xl md:text-6xl font-bold text-white leading-tight"
+          className="text-5xl md:text-6xl font-bold font-serif text-white leading-tight"
           data-aos="fade-up"
         >
           Empower Your Future

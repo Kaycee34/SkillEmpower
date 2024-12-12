@@ -7,7 +7,7 @@ const Header = () => {
     const isDesktop = useMediaQuery({ query: '(min-width: 768px)' });
 
     return (
-        <nav className="bg-gray-200 w-full font-poppins sticky top-0 z-50 shadow-md">
+        <nav className="bg-gray-200 w-full font-serif sticky top-0 z-50 shadow-md">
             {isDesktop ? <NavbarDesktop /> : <MobileNavbar />}
         </nav>
     );

@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    @apply font-merriweather;
+body {
+    @apply font-serif;
   }

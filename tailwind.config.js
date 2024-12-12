@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-        merriweather: ['Merriweather', 'serif'], 
+        serif: ['Cormorant Garamond', 'serif'],
       },
     },
   },
