@@ -4,7 +4,7 @@ import "aos/dist/aos.css"; // Import AOS styles
 import { Star } from "lucide-react";
 import jane from '../assets/janeDoe.jpg';
 import john from '../assets/johnSmith.jpg';
-import alice from '../assets/Alicejohnson.jpg';
+// import alice from '../assets/Alicejohnson.jpg';
 
 const Testimonials = () => {
   useEffect(() => {
@@ -38,7 +38,7 @@ const Testimonials = () => {
         "A welcoming community and exceptional resources—SkillEmpower truly cares about its students' success.",
       rating: 5,
       role: "Vulcanizer",
-      imgs: alice,
+      // imgs: alice,
     },
   ];
 
