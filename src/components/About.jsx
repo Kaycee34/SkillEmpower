@@ -42,9 +42,9 @@ const AboutSection = () => {
           data-aos-delay="300" // Delay for button animation
           style={{ transform: "none" }} // Ensure no transform is set initially
         >
-          <button className="px-10 py-4 bg-purple-600 text-white rounded-full font-medium shadow-lg hover:bg-purple-700 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500">
+          <a href="/aboutus" className="px-10 py-4 bg-purple-600 text-white rounded-full font-medium shadow-lg hover:bg-purple-700 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500">
             Learn More
-          </button>
+          </a>
         </div>
       </div>
     </section>

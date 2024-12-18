@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Home } from "lucide-react";
-// import logo from '../assets/SkillEmpowerLogo.png';
+import logo from '../../public/skillempower.png';
 
 const NavbarDesktop = () => {
   return (
@@ -9,12 +9,11 @@ const NavbarDesktop = () => {
       <div className="flex items-center">
         <a href="/" className="text-lg font-bold text-gray-800">
           {/* logo */}
-          {/* <img
+          <img
             src={logo}
             alt="SkillEmpower"
-            className="mr-2 h-12 object-contain"
-          /> */}
-          SkillEmpower
+            className="mr-2 h-14 object-contain"
+          />
         </a>
       </div>
 
@@ -25,15 +24,15 @@ const NavbarDesktop = () => {
           Home
         </Link>
         <Link to="/courses" className="hover:text-gray-600 text-base">
-          Courses
+        Programs
         </Link>
         <Link to="/services" className="hover:text-gray-600 text-base">
           Services
         </Link>
-        <Link to="/programs" className="hover:text-gray-600 text-base">
-          Programs
+        <Link to="/aboutus" className="hover:text-gray-600 text-base">
+          About Us
         </Link>
-        <Link to="/contact" className="hover:text-gray-600 text-base">
+        <Link to="/contactus" className="hover:text-gray-600 text-base">
           Contact Us
         </Link>
       </nav>

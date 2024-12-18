@@ -59,12 +59,12 @@ const Hero = () => {
           Sponsored by <span className="font-semibold">Dike Akoghi'La Mba</span>
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
-          <button className="px-8 py-3 bg-purple-500 text-white rounded-lg font-medium shadow-md hover:bg-purple-600 transition-transform transform hover:scale-105">
+          <a href="/register" className="px-8 py-3 bg-purple-500 text-white rounded-lg font- text-lg shadow-md hover:bg-purple-600 transition-transform transform hover:scale-105">
             Get Started
-          </button>
-          <button className="px-8 py-3 bg-white text-gray-800 rounded-lg font-medium shadow-md hover:bg-gray-100 transition-transform transform hover:scale-105">
+          </a>
+          <a href="/aboutus" className="px-8 py-3 bg-white text-gray-800 rounded-lg font-medium text-lg shadow-md hover:bg-gray-100 transition-transform transform hover:scale-105">
             Learn More
-          </button>
+          </a>
         </div>
       </div>
     </section>

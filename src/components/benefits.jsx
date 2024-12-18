@@ -75,7 +75,7 @@ const Benefits = () => {
 
               {/* Description */}
               <p
-                className="text-gray-600 bg-gray-50 p-3 rounded-md shadow-sm"
+                className="text-gray-600 text-lg bg-gray-50 p-3 rounded-md shadow-sm"
                 data-aos="fade" // Smooth fade effect for text
                 data-aos-delay={`${index * 300}`}
               >

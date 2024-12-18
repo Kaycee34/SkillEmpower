@@ -1,4 +1,5 @@
-import {Mail, Phone, MapPin} from 'lucide-react';
+import { Mail, Phone, MapPin } from "lucide-react";
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -8,9 +9,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8">
           {/* About SkillEmpower */}
           <div>
-            <h3 className="text-white text-xl font-semibold mb-4">SkillEmpower</h3>
+            <h3 className="text-white text-xl font-semibold mb-4">About SkillEmpower</h3>
             <p className="text-sm">
-              Empowering individuals and teams with the skills they need to thrive in today’s digital world.
+              At SkillEmpower, we believe in unlocking the potential within everyone. We provide accessible,
+              high-quality training to individuals and organizations, helping them gain the knowledge and skills
+              needed to excel in today’s competitive digital landscape.
+            </p>
+            <p className="text-sm mt-2">
+              Our mission is to empower people with the tools they need to succeed—whether you’re starting a new
+              career, building your business, or enhancing your expertise in a specific domain.
             </p>
           </div>
 
@@ -19,7 +26,7 @@ const Footer = () => {
             <h3 className="text-white text-xl font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/about" className="hover:text-white transition">
+                <a href="/aboutus" className="hover:text-white transition">
                   About Us
                 </a>
               </li>
@@ -29,12 +36,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/contact" className="hover:text-white transition">
+                <a href="/contactus" className="hover:text-white transition">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="/careers" className="hover:text-white transition">
+                <a href="/courses" className="hover:text-white transition">
                   Careers
                 </a>
               </li>
@@ -47,11 +54,11 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-center space-x-2">
                 <Mail className="w-5 h-5 text-gray-400" />
-                <span>support@skillempower.com</span>
+                <a href="mailto:support@skillempower.com">support@skillempower.com</a>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-5 h-5 text-gray-400" />
-                <span>+1 (234) 567-8901</span>
+                <a href="tel:12345678901">+1 (234) 567-8901</a>
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin className="w-5 h-5 text-gray-400" />
@@ -61,7 +68,7 @@ const Footer = () => {
           </div>
 
           {/* Social Media Links */}
-          {/* <div>
+          <div>
             <h3 className="text-white text-xl font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a
@@ -70,7 +77,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition"
               >
-                < className="w-6 h-6" />
+                <FaFacebook className="w-6 h-6" />
               </a>
               <a
                 href="https://twitter.com"
@@ -78,18 +85,26 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition"
               >
-                <Twitter className="w-6 h-6" />
-              </a> 
+                <FaTwitter className="w-6 h-6" />
+              </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition"
               >
-                <LinkedIn className="w-6 h-6" />
+                <FaLinkedin className="w-6 h-6" />
               </a>
-            </div> */}
-          {/* </div> */}
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition"
+              >
+                <FaInstagram className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Section */}

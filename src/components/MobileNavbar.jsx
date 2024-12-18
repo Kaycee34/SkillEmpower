@@ -1,6 +1,7 @@
 import { AlignLeft, CircleUserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import logo from '../../public/skillempower.png'
 
 const MobileNavbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -16,11 +17,11 @@ const MobileNavbar = () => {
         </div>
 
         {/* Logo */}
-        {/* <img
+        <img
           src={logo}
           alt="SkillEmpower"
-          className="h-8 w-auto object-contain" // Adjust height
-        /> */}
+          className="h-14 w-auto object-contain" // Adjust height
+        />
 
         {/* User Icon */}
         <div>
@@ -43,6 +44,12 @@ const MobileNavbar = () => {
           >
             ✕
           </button>
+           {/* Logo */}
+        <img
+          src={logo}
+          alt="SkillEmpower"
+          className="h-14 w-auto object-contain"// Adjust height
+        />
           <ul className="flex flex-col items-center justify-center flex-grow text-lg text-black">
             <li className="py-4">
               <Link to="/" onClick={toggleSidebar}>
@@ -51,7 +58,7 @@ const MobileNavbar = () => {
             </li>
             <li className="py-4">
               <Link to="/courses" onClick={toggleSidebar}>
-                Courses
+              Programs
               </Link>
             </li>
             <li className="py-4">
@@ -60,13 +67,13 @@ const MobileNavbar = () => {
               </Link>
             </li>
             <li className="py-4">
-              <Link to="/programs" onClick={toggleSidebar}>
-                Programs
+              <Link to="/aboutus" onClick={toggleSidebar}>
+                About Us
               </Link>
             </li>
             <li className="py-4">
-              <Link to="/register" onClick={toggleSidebar}>
-                Register
+              <Link to="/contactus" onClick={toggleSidebar}>
+                Contact Us
               </Link>
             </li>
           </ul>
