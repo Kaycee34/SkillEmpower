@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-purple-100 py-12 px-6">
+    <div className="min-h-screen font-poppins bg-gradient-to-b from-purple-100 to-purple-100 py-12 px-6">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-extrabold text-purple-800 drop-shadow-lg">
           About SkillEmpower

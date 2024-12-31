@@ -9,7 +9,7 @@ import AboutSection from './../components/About';
 
 const Home = () => {
   return (
-    <div>
+    <div className="font-poppins">
       <Hero />
       <TrustedByMillions />
       <AboutSection />

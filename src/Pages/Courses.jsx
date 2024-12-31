@@ -82,7 +82,7 @@ const courses = [
 
 const Courses = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-purple-100 py-8">
+    <div className="min-h-screen font-poppins bg-gradient-to-b from-purple-100 to-purple-100 py-8">
       <header className="text-center mb-8">
         <h1 className="text-3xl font-bold text-purple-800">Explore Our Courses</h1>
         <p className="text-gray-600 font-xl font-semibold mt-2">

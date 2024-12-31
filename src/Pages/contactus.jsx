@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin, User, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-12 px-6">
+    <div className="min-h-screen font-poppins bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-12 px-6">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-purple-800">Contact Us</h1>
         <p className="text-gray-700 mt-4">

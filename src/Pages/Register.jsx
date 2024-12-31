@@ -1,20 +1,80 @@
 "use client";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { Eye, EyeOff, User, Mail, Lock } from "lucide-react";
-import logo from '../../public/skillempower.png'
+import logo from "../../public/skillempower.png";
 
 const Register = () => {
+  const navigate = useNavigate(); // Initialize navigate
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+    setError("");
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+
+    const { name, email, password, confirmPassword } = formData;
+
+    // Validate inputs
+    if (!name || !email || !password || !confirmPassword) {
+      setError("All fields are required.");
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long.");
+      return;
+    }
+
+    // Submit logic
+    try {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+      const response = await fetch(`${backendUrl}/api/user/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        setSuccess("Registration successful! Redirecting...");
+        setFormData({ name: "", email: "", password: "", confirmPassword: "" });
+        setTimeout(() => {
+          navigate("/"); // Redirect to the homepage
+        }, 3000); // Redirect after 3 seconds
+      } else {
+        setError(result.message || "Something went wrong.");
+      }
+    } catch (err) {
+      setError("Unable to register. Please try again later.");
+      console.error(err);
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-12 px-6">
+    <div className="min-h-screen font-poppins bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-12 px-6">
       <header className="text-center mb-12">
-        <img
-          src={logo}
-          alt="SkillEmpower Logo"
-          className="mx-auto h-16 mb-4"
-        />
+        <img src={logo} alt="SkillEmpower Logo" className="mx-auto h-16 mb-4" />
         <h1 className="text-4xl font-bold text-purple-800">Welcome to SkillEmpower</h1>
         <p className="text-gray-800 font-xl font-semibold mt-2">
           Empower your skills and join us today! Fill in the form to register.
@@ -22,13 +82,13 @@ const Register = () => {
       </header>
 
       <section className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-6 md:p-8">
-        <form className="space-y-6">
+        {error && <p className="text-red-600 text-center mb-4">{error}</p>}
+        {success && <p className="text-green-600 text-center mb-4">{success}</p>}
+
+        <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Name Field */}
           <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-800 mb-1"
-            >
+            <label htmlFor="name" className="block text-sm font-medium text-gray-800 mb-1">
               Full Name
             </label>
             <div className="relative">
@@ -36,6 +96,8 @@ const Register = () => {
               <input
                 type="text"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full px-10 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none"
                 placeholder="Enter your full name"
               />
@@ -44,10 +106,7 @@ const Register = () => {
 
           {/* Email Field */}
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-800 mb-1"
-            >
+            <label htmlFor="email" className="block text-sm font-medium text-gray-800 mb-1">
               Email Address
             </label>
             <div className="relative">
@@ -55,6 +114,8 @@ const Register = () => {
               <input
                 type="email"
                 id="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-10 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none"
                 placeholder="Enter your email"
               />
@@ -63,10 +124,7 @@ const Register = () => {
 
           {/* Password Field */}
           <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-800 mb-1"
-            >
+            <label htmlFor="password" className="block text-sm font-medium text-gray-800 mb-1">
               Password
             </label>
             <div className="relative">
@@ -74,83 +132,62 @@ const Register = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
+                value={formData.password}
+                onChange={handleChange}
                 className="w-full px-10 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none"
-                placeholder="Create a password"
+                placeholder="Enter your password"
               />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-3 text-gray-400 focus:outline-none"
-              >
-                {showPassword ? <EyeOff /> : <Eye />}
-              </button>
+              {showPassword ? (
+                <EyeOff
+                  onClick={() => setShowPassword(false)}
+                  className="absolute right-3 top-3 text-gray-400 cursor-pointer"
+                />
+              ) : (
+                <Eye
+                  onClick={() => setShowPassword(true)}
+                  className="absolute right-3 top-3 text-gray-400 cursor-pointer"
+                />
+              )}
             </div>
           </div>
 
           {/* Confirm Password Field */}
           <div>
-            <label
-              htmlFor="confirm-password"
-              className="block text-sm font-medium text-gray-800 mb-1"
-            >
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-800 mb-1">
               Confirm Password
             </label>
             <div className="relative">
               <Lock className="absolute left-3 top-3 text-gray-400" />
               <input
                 type={showConfirmPassword ? "text" : "password"}
-                id="confirm-password"
+                id="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
                 className="w-full px-10 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none"
                 placeholder="Confirm your password"
               />
-              <button
-                type="button"
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute right-3 top-3 text-gray-400 focus:outline-none"
-              >
-                {showConfirmPassword ? <EyeOff /> : <Eye />}
-              </button>
+              {showConfirmPassword ? (
+                <EyeOff
+                  onClick={() => setShowConfirmPassword(false)}
+                  className="absolute right-3 top-3 text-gray-400 cursor-pointer"
+                />
+              ) : (
+                <Eye
+                  onClick={() => setShowConfirmPassword(true)}
+                  className="absolute right-3 top-3 text-gray-400 cursor-pointer"
+                />
+              )}
             </div>
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full px-4 py-2 bg-purple-700 text-white rounded-lg shadow-lg hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            className="w-full py-3 text-white bg-purple-600 hover:bg-purple-700 rounded-lg font-medium text-lg focus:outline-none"
           >
             Register
           </button>
         </form>
-
-        {/* Additional Links */}
-        <div className="mt-6 text-center">
-          <p className="text-gray-800">
-            Already have an account?{" "}
-            <a
-              href="/login"
-              className="text-purple-700 font-semibold hover:underline"
-            >
-              Log in
-            </a>
-          </p>
-          <p className="text-gray-800 mt-2">
-            By signing up, you agree to our{" "}
-            <a
-              href="/terms"
-              className="text-purple-700 font-semibold hover:underline"
-            >
-              Terms of Service
-            </a>{" "}
-            and{" "}
-            <a
-              href="/privacy"
-              className="text-purple-700 font-semibold hover:underline"
-            >
-              Privacy Policy
-            </a>
-            .
-          </p>
-        </div>
       </section>
     </div>
   );
