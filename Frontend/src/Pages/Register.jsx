@@ -48,7 +48,7 @@ const Register = () => {
 
     // Submit logic
     try {
-      const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || "https://localhost/4000";
       const response = await fetch(`${backendUrl}/api/user/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
